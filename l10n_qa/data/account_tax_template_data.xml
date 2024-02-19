@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Sales Tax -->
+    <record id="qa_standard_sale_5" model="account.tax.template">
+        <field name="name">VAT 5%</field>
+        <field name="type_tax_use">sale</field>
+        <field name="amount">5</field>
+        <field name="amount_type">percent</field>
+        <field name="description">VAT 5%</field>
+        <field name="tax_group_id" ref="qa_tax_group_5"/>
+        <field name="chart_template_id" ref="qa_chart_template_standard"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'plus_report_line_ids': [ref('tax_report_all_sales_base_five')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('qa_account_201017'),
+                'plus_report_line_ids': [ref('tax_report_all_sales_tax_five')],
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'minus_report_line_ids': [ref('tax_report_all_sales_base_five')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('qa_account_201017'),
+                'minus_report_line_ids': [ref('tax_report_all_sales_tax_five')],
+            }),
+        ]"/>
+    </record>
+
+    <record id="qa_sale_tax_0" model="account.tax.template">
+        <field name="name">VAT 0%</field>
+        <field name="type_tax_use">sale</field>
+        <field name="amount">0</field>
+        <field name="amount_type">percent</field>
+        <field name="description">VAT 0%</field>
+        <field name="tax_group_id" ref="qa_tax_group_0"/>
+        <field name="chart_template_id" ref="qa_chart_template_standard"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'plus_report_line_ids': [ref('tax_report_all_sales_base_zero')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'minus_report_line_ids': [ref('tax_report_all_sales_tax_zero')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"/>
+    </record>
+
+    <record id="qa_sale_tax_exempted" model="account.tax.template">
+        <field name="name">Exempted Tax</field>
+        <field name="type_tax_use">sale</field>
+        <field name="amount">0</field>
+        <field name="amount_type">percent</field>
+        <field name="description">Exempted</field>
+        <field name="tax_group_id" ref="qa_tax_group_exempted"/>
+        <field name="chart_template_id" ref="qa_chart_template_standard"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'plus_report_line_ids': [ref('tax_report_all_sales_base_exempt')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'minus_report_line_ids': [ref('tax_report_all_sales_tax_exempt')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"/>
+    </record>
+
+    <!-- Purchases Taxes -->
+    <record id="qa_purchase_tax_5" model="account.tax.template">
+        <field name="name">VAT 5%</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="amount">5</field>
+        <field name="amount_type">percent</field>
+        <field name="description">VAT 5%</field>
+        <field name="tax_group_id" ref="qa_tax_group_5"/>
+        <field name="chart_template_id" ref="qa_chart_template_standard"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'plus_report_line_ids': [ref('tax_report_expense_base_five')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('qa_account_104041'),
+                'plus_report_line_ids': [ref('tax_report_expense_tax_five')],
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+                'minus_report_line_ids': [ref('tax_report_expense_base_five')],
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('qa_account_104041'),
+                'minus_report_line_ids': [ref('tax_report_expense_tax_five')],
+            }),
+        ]"/>
+    </record>
+    <record id="qa_purchase_tax_0" model="account.tax.template">
+        <field name="name">VAT 0%</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="amount">0</field>
+        <field name="amount_type">percent</field>
+        <field name="description">VAT 0%</field>
+        <field name="tax_group_id" ref="qa_tax_group_0"/>
+        <field name="chart_template_id" ref="qa_chart_template_standard"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"/>
+    </record>
+    <record id="qa_purchase_tax_exempted" model="account.tax.template">
+        <field name="name">Exempted Tax</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="amount">0</field>
+        <field name="amount_type">percent</field>
+        <field name="description">Exempted Tax</field>
+        <field name="tax_group_id" ref="qa_tax_group_exempted"/>
+        <field name="chart_template_id" ref="qa_chart_template_standard"/>
+        <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"/>
+        <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+            }),
+        ]"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Chart template -->
+    <record id="qa_chart_template_standard" model="account.chart.template">
+        <field name="name">Qatar Chart of Accounts - Standard</field>
+        <field name="code_digits">6</field>
+        <field name="bank_account_code_prefix">1212</field>
+        <field name="cash_account_code_prefix">1211</field>
+        <field name="transfer_account_code_prefix">121210</field>
+        <field name="currency_id" ref="base.QAR"/>
+        <field name="spoken_languages" eval="'ar_001'"/>
+        <field name="country_id" ref="base.qa"/>
+    </record>
+</odoo>
