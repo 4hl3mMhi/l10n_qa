@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_fiscal_position_qatar" model="account.fiscal.position.template">
+        <field name="name">Qatar</field>
+        <field name="sequence">19</field>
+        <field name="auto_apply" eval="True"/>
+        <field name="country_id" ref="base.qa"/>
+        <field name="chart_template_id" ref="qa_chart_template_standard"/>
+    </record>
+
+    <record id="account_fiscal_position_non_qatar" model="account.fiscal.position.template">
+        <field name="name">Non-Qatar</field>
+        <field name="sequence">20</field>
+        <field name="auto_apply" eval="True"/>
+        <field name="chart_template_id" ref="qa_chart_template_standard"/>
+    </record>
+
+    <record id="account_fiscal_position_tax_non_qatar_01" model="account.fiscal.position.tax.template">
+        <field name="tax_src_id" ref="qa_standard_sale_5"/>
+        <field name="tax_dest_id" ref="qa_sale_tax_0"/>
+        <field name="position_id" ref="account_fiscal_position_non_qatar"/>
+    </record>
+
+    <record id="account_fiscal_position_tax_non_qatar_02" model="account.fiscal.position.tax.template">
+        <field name="tax_src_id" ref="qa_purchase_tax_5"/>
+        <field name="tax_dest_id" ref="qa_purchase_tax_0"/>
+        <field name="position_id" ref="account_fiscal_position_non_qatar"/>
+    </record>
+</odoo>
