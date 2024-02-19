@@ -11,28 +11,24 @@
         <field name="chart_template_id" ref="qa_chart_template_standard"/>
         <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
-                'plus_report_line_ids': [ref('tax_report_all_sales_base_five')],
+                'plus_report_expression_ids': [ref('tax_report_all_sales_base_five_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
                 'account_id': ref('qa_account_201017'),
-                'plus_report_line_ids': [ref('tax_report_all_sales_tax_five')],
+                'plus_report_expression_ids': [ref('tax_report_all_sales_tax_five_tag')],
             }),
         ]"/>
         <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
-                'minus_report_line_ids': [ref('tax_report_all_sales_base_five')],
+                'minus_report_expression_ids': [ref('tax_report_all_sales_base_five_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
                 'account_id': ref('qa_account_201017'),
-                'minus_report_line_ids': [ref('tax_report_all_sales_tax_five')],
+                'minus_report_expression_ids': [ref('tax_report_all_sales_tax_five_tag')],
             }),
         ]"/>
     </record>
@@ -47,24 +43,24 @@
         <field name="chart_template_id" ref="qa_chart_template_standard"/>
         <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
-                'plus_report_line_ids': [ref('tax_report_all_sales_base_zero')],
+                'plus_report_expression_ids': [ref('tax_report_all_sales_base_zero_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
+                'account_id': False,
+                'plus_report_expression_ids': [ref('tax_report_all_sales_tax_zero_tag')],
             }),
         ]"/>
         <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
-                'minus_report_line_ids': [ref('tax_report_all_sales_tax_zero')],
+                'minus_report_expression_ids': [ref('tax_report_all_sales_base_zero_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
+                'account_id': False,
+                'minus_report_expression_ids': [ref('tax_report_all_sales_tax_zero_tag')],
             }),
         ]"/>
     </record>
@@ -79,24 +75,24 @@
         <field name="chart_template_id" ref="qa_chart_template_standard"/>
         <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
-                'plus_report_line_ids': [ref('tax_report_all_sales_base_exempt')],
+                'plus_report_expression_ids': [ref('tax_report_all_sales_base_exempt_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
+                'account_id': False,
+                'plus_report_expression_ids': [ref('tax_report_all_sales_tax_exempt_tag')],
             }),
         ]"/>
         <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
-                'minus_report_line_ids': [ref('tax_report_all_sales_tax_exempt')],
+                'minus_report_expression_ids': [ref('tax_report_all_sales_base_exempt_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
+                'account_id': False,
+                'minus_report_expression_ids': [ref('tax_report_all_sales_tax_exempt_tag')],
             }),
         ]"/>
     </record>
@@ -112,28 +108,24 @@
         <field name="chart_template_id" ref="qa_chart_template_standard"/>
         <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
-                'plus_report_line_ids': [ref('tax_report_expense_base_five')],
+                'plus_report_expression_ids': [ref('tax_report_expense_base_five_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
                 'account_id': ref('qa_account_104041'),
-                'plus_report_line_ids': [ref('tax_report_expense_tax_five')],
+                'plus_report_expression_ids': [ref('tax_report_expense_tax_five_tag')],
             }),
         ]"/>
         <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
-                'minus_report_line_ids': [ref('tax_report_expense_base_five')],
+                'minus_report_expression_ids': [ref('tax_report_expense_base_five_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
                 'account_id': ref('qa_account_104041'),
-                'minus_report_line_ids': [ref('tax_report_expense_tax_five')],
+                'minus_report_expression_ids': [ref('tax_report_expense_tax_five_tag')],
             }),
         ]"/>
     </record>
@@ -147,22 +139,24 @@
         <field name="chart_template_id" ref="qa_chart_template_standard"/>
         <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
+                'plus_report_expression_ids': [ref('tax_report_expense_base_zero_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
+                'account_id': False,
+                'plus_report_expression_ids': [ref('tax_report_expense_tax_zero_tag')],
             }),
         ]"/>
         <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
+                'minus_report_expression_ids': [ref('tax_report_expense_base_zero_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
+                'account_id': False,
+                'minus_report_expression_ids': [ref('tax_report_expense_tax_zero_tag')],
             }),
         ]"/>
     </record>
@@ -176,22 +170,24 @@
         <field name="chart_template_id" ref="qa_chart_template_standard"/>
         <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
+                'plus_report_expression_ids': [ref('tax_report_expense_base_exempt_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
+                'account_id': False,
+                'plus_report_expression_ids': [ref('tax_report_expense_tax_exempt_tag')],
             }),
         ]"/>
         <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'base',
+                'minus_report_expression_ids': [ref('tax_report_expense_base_exempt_tag')],
             }),
             (0,0, {
-                'factor_percent': 100,
                 'repartition_type': 'tax',
+                'account_id': False,
+                'minus_report_expression_ids': [ref('tax_report_expense_tax_exempt_tag')],
             }),
         ]"/>
     </record>

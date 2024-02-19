@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Qatar - Accounting',
-    'version': '15.0.1',
+    'version': '16.0.1',
     'author': 'Ahlem Mehri',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
